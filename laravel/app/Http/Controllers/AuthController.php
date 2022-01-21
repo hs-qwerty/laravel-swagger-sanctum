@@ -61,7 +61,7 @@ class AuthController extends Controller
             return "patates";
         }else {
 
-            return "gel";
+            return "gel1";
         }
 
 
