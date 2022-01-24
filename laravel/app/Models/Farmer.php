@@ -5,9 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Customer extends Model
+class Farmer extends Model
 {
     use HasFactory;
+
 
     protected $fillable = [
         'name',
@@ -15,14 +16,11 @@ class Customer extends Model
         'password'
     ];
 
-    public function customerdetails()
+
+    public function farmerdetails()
     {
-        return $this->hasOne('App\Models\CustomerDetails');
+        return $this->hasOne('App\Models\FarmerDetails');
     }
 
-    public function sellingsdetails()
-    {
-        return $this->hasMany('App\Models\Selling');
-    }
 
 }

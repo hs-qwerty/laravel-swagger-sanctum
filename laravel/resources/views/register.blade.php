@@ -46,6 +46,12 @@
 
     <input type="password" name="repassword" id="inputPassword" class="form-control" placeholder="Password repeat" required>
 
+    <div class="form-group">
+        <select name="type" style="height: 50px;" class="form-control" id="exampleFormControlSelect1">
+            <option value="1">Customer</option>
+            <option value="2">Farmer</option>
+        </select>
+    </div>
     <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
     <p class="mt-5 mb-3 text-muted">Laravel To-do | hs-qwerty</p>
     <a href="{{ route('login') }}"><p class="mt-5 mb-3 text-muted">Login </p></a>

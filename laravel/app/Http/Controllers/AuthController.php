@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Customer;
+use App\Models\Farmer;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -33,20 +34,44 @@ class AuthController extends Controller
         ]);
 
 
-        $customer = new Customer();
-
-        $customer->email = $request->email;
-        $customer->password = Hash::make($request->password);
-        $save = $customer->save();
-        $userIp = request()->ip();
-        $customer->customerdetails()->create(['ip' => $userIp]);
-
-        if ($save)
+        if($request->type == "1")
         {
-            return back()->with('success', 'Register is Success');
-        }else {
-            return back()->with('fails', 'Register is Fails');
+            $customer = new Customer();
+
+            $customer->email = $request->email;
+            $customer->password = Hash::make($request->password);
+            $save = $customer->save();
+            $userIp = request()->ip();
+            $customer->customerdetails()->create(['ip' => $userIp]);
+
+            if ($save)
+            {
+                return back()->with('success', 'Register is Success');
+            }else {
+                return back()->with('fails', 'Register is Fails');
+            }
+
+        }else{
+
+            $farmer = new Farmer();
+
+            $farmer->email = $request->email;
+            $farmer->password = Hash::make($request->password);
+            $save = $farmer->save();
+            $userIp = request()->ip();
+            $farmer->farmerdetails()->create(['ip' => $userIp]);
+
+            if ($save)
+            {
+                return back()->with('success', 'Register is Success');
+            }else {
+                return back()->with('fails', 'Register is Fails');
+            }
+
+
         }
+
+
 
 
     }
