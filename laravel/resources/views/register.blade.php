@@ -19,8 +19,25 @@
 <body class="text-center">
 
 
-<form action="{{ route('req') }}" method="post" class="form-signin">
+
+
+
+<form action="{{ route('save') }}" method="post" class="form-signin">
     @csrf
+
+    @if(Session::get('success'))
+        <div class="alert alert-success">
+            {{ Session::get('success') }}
+        </div>
+    @endif
+
+
+    @if(Session::get('fails'))
+        <div class="alert alert-danger">
+            {{ Session::get('fails') }}
+        </div>
+    @endif
+
     <h1 class="h3 mb-3 font-weight-normal">Please register</h1>
     <label for="inputEmail" class="sr-only">Email address</label>
     <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
@@ -31,6 +48,7 @@
 
     <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
     <p class="mt-5 mb-3 text-muted">Laravel To-do | hs-qwerty</p>
+    <a href="{{ route('login') }}"><p class="mt-5 mb-3 text-muted">Login </p></a>
 </form>
 
 

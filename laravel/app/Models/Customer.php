@@ -14,4 +14,10 @@ class Customer extends Model
         'email',
         'password'
     ];
+
+    public function customerdetails()
+    {
+        return $this->hasOne('App\Models\CustomerDetails');
+    }
+
 }
