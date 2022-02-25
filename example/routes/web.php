@@ -35,6 +35,10 @@ Route::post('/photographer/store', [PhotographerContoller::class, 'store'])->nam
 
 Route::get('/photographer/edit/{id}', [PhotographerContoller::class, 'edit'])->name('photographer.edit');
 
+Route::get('/photographer/gallery/{id}', [PhotographerContoller::class, 'gallery'])->name('photographer.gallery');
+
+
+
 Route::put('/photographer/update/{id}', [PhotographerContoller::class, 'update'])->name('photographer.update');
 
 Route::delete('/photographer/destroy/{id}', [PhotographerContoller::class, 'destroy'])->name('photographer.destroy');

@@ -8,3 +8,7 @@
 <link rel="stylesheet" href="{{ asset('front/plugins/fontawesome-free/css/all.min.css') }}">
 <!-- Theme style -->
 <link rel="stylesheet" href="{{ asset('front/dist/css/adminlte.min.css') }}">
+
+
+<!-- Ekko Lightbox -->
+<link rel="stylesheet" href="{{ asset('front/plugins/ekko-lightbox/ekko-lightbox.css') }}">

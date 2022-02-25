@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Photographer;
 use Illuminate\Http\Request;
 
 class ImageController extends Controller
@@ -16,7 +17,9 @@ class ImageController extends Controller
 
     public function create()
     {
-        return view('image.create');
+
+        $protographer = Photographer::all();
+        return view('image.create', compact('protographer'));
     }
     //
 }

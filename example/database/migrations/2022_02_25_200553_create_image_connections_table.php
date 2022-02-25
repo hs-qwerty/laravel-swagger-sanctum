@@ -15,11 +15,15 @@ class CreateImageConnectionsTable extends Migration
     {
         Schema::create('image_connections', function (Blueprint $table) {
             $table->id();
+            $table->string('photographerId');
             $table->string('name');
+            $table->text('description')->nullable();
             $table->string('url');
             $table->string('photoId');
-            $table->string('first_name');
-            $table->string('last_name');
+            $table->string('first_name')->nullable();
+            $table->string('last_name')->nullable();
+            $table->string('category');
+            $table->string('order');
             $table->timestamps();
         });
     }

@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Photographer extends Model
 {
     use HasFactory;
+
+
+    public function getImage()
+    {
+        return $this->hasMany('App\Models\ImageConnection', 'photographerId');
+    }
+
 }

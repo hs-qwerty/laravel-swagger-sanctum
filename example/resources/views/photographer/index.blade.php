@@ -56,6 +56,10 @@
                             <button class="btn btn-primary btn-xs mr-3">Edit</button>
                         </a>
 
+                        <a href="{{ route('photographer.gallery', $item->id) }}">
+                            <button class="btn btn-dark btn-xs mr-3">Gallery</button>
+                        </a>
+
 
                         <form id="photographerDestroy" method="post" action="{{ route('photographer.destroy',$item->id) }}">
                             @csrf

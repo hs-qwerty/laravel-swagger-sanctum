@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\PhotographerStoreRequest;
 use App\Http\Requests\PhotographerUpdateRequest;
 use App\Models\Photographer;
+use App\Models\ImageConnection;
 use Illuminate\Http\Request;
 
 class PhotographerContoller extends Controller
@@ -16,6 +17,7 @@ class PhotographerContoller extends Controller
      */
     public function index()
     {
+
 
         return view('index');
         //
@@ -163,5 +165,23 @@ class PhotographerContoller extends Controller
             return redirect()->back()->with(['fail' => 'There was an error']);
         }
         //
+    }
+
+    public function gallery(Request $request, $id)
+    {
+
+        //return $request->qt;
+
+        if ($request->has('qt')) {
+
+            $photographer = ImageConnection::search($request->qt)->orderBy('order','ASC')->get();
+        }else {
+            $photographer = ImageConnection::orderBy('order','ASC')->get();
+        }
+
+        //return ImageConnection::find(1)->photographer->name;
+       //$photographer =  Photographer::find($id)->getImage;
+
+       return view('photographer.gallery',compact('photographer'));
     }
 }
