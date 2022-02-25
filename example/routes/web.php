@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\PhotographerContoller;
 
+use App\Http\Controllers\ImageController;
+
+use App\Http\Controllers\ImageConnectionController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,3 +38,9 @@ Route::get('/photographer/edit/{id}', [PhotographerContoller::class, 'edit'])->n
 Route::put('/photographer/update/{id}', [PhotographerContoller::class, 'update'])->name('photographer.update');
 
 Route::delete('/photographer/destroy/{id}', [PhotographerContoller::class, 'destroy'])->name('photographer.destroy');
+
+Route::get('/image/index', [ImageController::class, 'index'])->name('image.index');
+Route::get('/image/create', [ImageController::class, 'create'])->name('image.create');
+
+
+Route::post('/imageconnection/index', [ImageConnectionController::class, 'index'])->name('imageconnection.index');
