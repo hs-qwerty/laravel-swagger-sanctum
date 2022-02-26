@@ -6,13 +6,12 @@
 - Laravel Fortify Package
 - Pexels - Unsplash photo API
 - Laravel Scout Package
-
+- http://127.0.0.1:8000/login
 
 ## API
 
-http://127.0.0.1:8000/api/photographer/
-<br>
-http://127.0.0.1:8000/api/photographer/{id}
+- http://127.0.0.1:8000/api/photographer/
+- http://127.0.0.1:8000/api/photographer/{id}
 
 
 ## .env
