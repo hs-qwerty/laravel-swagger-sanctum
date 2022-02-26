@@ -29,7 +29,7 @@
         @endif
         <!-- /.card-header -->
             <!-- form start -->
-            <form method="post" action="{{ route('imageconnection.index') }}">
+            <form method="post" action="{{ route('imageconnection.pexels') }}">
                 @csrf
                 @method('POST')
                 <div class="card-body">
@@ -39,7 +39,7 @@
                         <label>Photographer Name</label>
                         <select name="photographerId" class="custom-select">
                             @foreach($protographer as $item)
-                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                <option value="{{ $item->id }}">{{ $item->name }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -63,12 +63,12 @@
 
                     <div class="form-group">
                         <label>Urls</label>
-                        <select name="urls" class="custom-select">
-                            <option value="raw">raw</option>
-                            <option value="full">full</option>
-                            <option value="regular">regular</option>
-                            <option value="small">small</option>
-                            <option value="thumb">thumb</option>
+                        <select name="color" class="custom-select">
+                            <option value="blue">Blue</option>
+                            <option value="red">Red</option>
+                            <option value="orange">Orange</option>
+                            <option value="yellow">Yellow</option>
+                            <option value="green">Green</option>
                         </select>
                     </div>
 

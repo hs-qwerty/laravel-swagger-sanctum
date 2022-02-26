@@ -21,5 +21,11 @@ class ImageController extends Controller
         $protographer = Photographer::all();
         return view('image.create', compact('protographer'));
     }
+
+    public function pexels()
+    {
+        $protographer = Photographer::all();
+        return view('image.pexels', compact('protographer'));
+    }
     //
 }

@@ -19,32 +19,41 @@ use App\Http\Controllers\ImageConnectionController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+
+Route::get('/anasayfa', [PhotographerContoller::class, 'index'])->middleware('auth');
+
+
+Route::prefix('photographer')->name('photographer.')->group(function() {
+
+    Route::middleware(['auth'])->group(function () {
+
+        Route::get('list', [PhotographerContoller::class, 'show']);
+        Route::get('create', [PhotographerContoller::class, 'create'])->name('create');
+        Route::post('store', [PhotographerContoller::class, 'store'])->name('store');
+        Route::get('edit/{id}', [PhotographerContoller::class, 'edit'])->name('edit');
+        Route::get('gallery/{id}', [PhotographerContoller::class, 'gallery'])->name('gallery');
+        Route::put('update/{id}', [PhotographerContoller::class, 'update'])->name('update');
+        Route::delete('destroy/{id}', [PhotographerContoller::class, 'destroy'])->name('destroy');
+
+    });
+
 });
 
 
-Route::get('/anasayfa', [PhotographerContoller::class, 'index']);
+Route::prefix('image')->name('image.')->group(function() {
+
+    Route::middleware(['auth'])->group(function () {
+        Route::get('index', [ImageController::class, 'index'])->name('index');
+        Route::get('create', [ImageController::class, 'create'])->name('create');
+        Route::get('pexels', [ImageController::class, 'pexels'])->name('pexels');
+
+    });
+
+});
 
 
-Route::get('/photographer/list', [PhotographerContoller::class, 'show'])->name('photographer.list');
-
-Route::get('/photographer/create', [PhotographerContoller::class, 'create'])->name('photographer.create');
-
-Route::post('/photographer/store', [PhotographerContoller::class, 'store'])->name('photographer.store');
-
-Route::get('/photographer/edit/{id}', [PhotographerContoller::class, 'edit'])->name('photographer.edit');
-
-Route::get('/photographer/gallery/{id}', [PhotographerContoller::class, 'gallery'])->name('photographer.gallery');
-
-
-
-Route::put('/photographer/update/{id}', [PhotographerContoller::class, 'update'])->name('photographer.update');
-
-Route::delete('/photographer/destroy/{id}', [PhotographerContoller::class, 'destroy'])->name('photographer.destroy');
-
-Route::get('/image/index', [ImageController::class, 'index'])->name('image.index');
-Route::get('/image/create', [ImageController::class, 'create'])->name('image.create');
 
 
 Route::post('/imageconnection/index', [ImageConnectionController::class, 'index'])->name('imageconnection.index');
+Route::post('/imageconnection/pexels', [ImageConnectionController::class, 'pexels'])->name('imageconnection.pexels');

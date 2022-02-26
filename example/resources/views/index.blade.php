@@ -10,7 +10,7 @@
 
             <div class="card-tools">
 
-                <a href="{{ route('photographer.list') }}">
+                <a href="/photographer/list">
                     <button class="btn btn-primary btn-xs">Photographer</button>
                 </a>
             </div>

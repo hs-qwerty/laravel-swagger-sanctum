@@ -4,7 +4,7 @@
              with font-awesome or any other icon font library -->
 
 
-        <li class="nav-header">EXAMPLES</li>
+        <li class="nav-header">Menu</li>
         <li class="nav-item">
             <a href="/anasayfa" class="nav-link">
                 <i class="nav-icon far fa-calendar-alt"></i>
@@ -23,12 +23,24 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="../kanban.html" class="nav-link">
+            <a href="{{ route('image.pexels') }}" class="nav-link">
                 <i class="nav-icon fas fa-columns"></i>
                 <p>
-                    Kanban Board
+                    Pexels
                 </p>
             </a>
+        </li>
+        <li class="nav-item">
+            <form action="{{ route('logout') }}" method="post" >
+                @csrf
+                @method('POST')
+                <button type="submit" class="nav-link">
+                    <p>
+                        Logout
+                    </p>
+                </button>
+            </form>
+
         </li>
 
     </ul>
