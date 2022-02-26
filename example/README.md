@@ -11,6 +11,7 @@
 ## API
 
 http://127.0.0.1:8000/api/photographer/
+<br>
 http://127.0.0.1:8000/api/photographer/{id}
 
 
