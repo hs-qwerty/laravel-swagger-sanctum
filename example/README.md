@@ -15,7 +15,7 @@
 
 
 ## .env
-DB_DATABASE=laravel_stock
-DB_USERNAME=root
-DB_PASSWORD=
-artisan migrate 
+- DB_DATABASE=laravel_stock
+- DB_USERNAME=root
+- DB_PASSWORD=
+- artisan migrate 
