@@ -36,6 +36,9 @@ http://127.0.0.1:8000/api/documentation
 
 ```
 
+![register](https://github.com/hs-qwerty/laravel-todo/blob/main/register.png)
+
+
 
 ```php
  - http://127.0.0.1:8000/api/login
@@ -45,7 +48,7 @@ http://127.0.0.1:8000/api/documentation
   * password
 
 ```
-
+![login](https://github.com/hs-qwerty/laravel-todo/blob/main/login.png)
 
 ```php
  - http://127.0.0.1:8000/api/product
@@ -53,3 +56,5 @@ http://127.0.0.1:8000/api/documentation
  * token
  
 ```
+
+![product](https://github.com/hs-qwerty/laravel-todo/blob/main/product.png)
