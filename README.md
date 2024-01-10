@@ -1,13 +1,13 @@
 ## Installation
 
 ```bash
-    cp .env.exmaple .env
-    composer install
+  cp .env.exmaple .env
+  composer install
 ```
 
 ```bash
-     php artisan key:generate
-     php artisan migrate:fresh --seed
+  php artisan key:generate
+  php artisan migrate:fresh --seed
 ```
 
 
@@ -15,7 +15,8 @@
 
 - laravel
 - mysql
-- jwt
+- sanctum
+- swagger
 
 
 ## mysql connection
@@ -24,7 +25,6 @@
 - host: 127.0.0.1
 - port: 3306
 - database: laravel
-
 
 
 # route
