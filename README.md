@@ -10,14 +10,11 @@
   php artisan migrate:fresh --seed
 ```
 
-
 ## Contents
-
 - laravel
 - mysql
 - sanctum
 - swagger
-
 
 ## mysql connection
 - user: root
@@ -26,8 +23,5 @@
 - port: 3306
 - database: laravel
 
-
-# route
-- /register - POST
-- /login - POST
-- /product - POST
+## postman collection
+- laravel-example.postman_collection.json
