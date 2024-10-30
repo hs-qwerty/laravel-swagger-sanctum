@@ -1,27 +1,21 @@
+## Requirements
+- PHP
+- Composer
 ## Installation
-
 ```bash
-  cp .env.exmaple .env
-  composer install
+composer install
+cp .env.example .env
+php artisan key:generate
 ```
-
-```bash
-  php artisan key:generate
-  php artisan migrate:fresh --seed
-```
-
 ## Contents
-- laravel
-- mysql
-- sanctum
-- swagger
+```text
+laravel
+mysql
+sanctum
+swagger
+```
+## Usage
+```text
+laravel-example.postman_collection.json
+```
 
-## mysql connection
-- user: root
-- password:
-- host: 127.0.0.1
-- port: 3306
-- database: laravel
-
-## postman collection
-- laravel-example.postman_collection.json
