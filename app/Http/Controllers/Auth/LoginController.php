@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Dto\LoginCheckDTO;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
-use App\Service\UserService;
+use App\Services\UserService;
 use Illuminate\Http\Request;
 
 class LoginController extends Controller
@@ -21,14 +21,14 @@ class LoginController extends Controller
         $dto = new LoginCheckDTO($validate);
         $user = $this->userService->check($dto->toArray());
 
-        if ($user){
-            $data['token'] = $user;
+        if ($user['status']){
+            $data['token'] = $user['token'];
 
             return response()->json([
                 'success' => true,
-                'message' => "registration was successful",
+                'message' => "login successful",
                 'data' => $data
-            ], 201);
+            ], 200);
         }else {
             return response()->json([
                 'success' => false,

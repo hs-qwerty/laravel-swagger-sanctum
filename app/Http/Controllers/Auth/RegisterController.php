@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Dto\RegisterStoreDTO;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RegisterStoreRequest;
-use App\Service\UserService;
+use App\Services\UserService;
 use Illuminate\Http\Request;
 
 class RegisterController extends Controller
@@ -15,7 +15,6 @@ class RegisterController extends Controller
     {
         $this->userService = $userService;
     }
-
     public function store(RegisterStoreRequest $request)
     {
         $validate = $request->validated();

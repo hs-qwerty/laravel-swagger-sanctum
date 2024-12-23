@@ -68,8 +68,22 @@ services:
     redis:
         image: redis:7.2-alpine
         container_name: laravel_redis
+        restart: unless-stopped
         ports:
-            - "7379:6379"
+            - "6379:6379"
+        networks:
+            - laravel
+    #rabbitmq
+
+    admin-rabbitmq:
+        image: rabbitmq:3.11-management
+        container_name: admin-rabbitmq
+        restart: unless-stopped
+        volumes:
+            - ./docker-compose/rabbitmq/data:/var/lib/rabbitmq
+        ports:
+            - 5672:5672
+            - 15672:15672
         networks:
             - laravel
 volumes:

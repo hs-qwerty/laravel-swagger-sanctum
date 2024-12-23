@@ -31,10 +31,10 @@ class RegisterStoreRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'Name is required',
-            'email.required' => 'Email is required',
-            'email.unique' => 'Such an account is being used',
-            'password.required' => 'Password is required',
+            'name.required' => 'name is required',
+            'email.required' => 'email is required',
+            'email.unique' => 'such an account is being used',
+            'password.required' => 'password is required',
         ];
     }
 }

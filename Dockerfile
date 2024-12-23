@@ -11,11 +11,23 @@ RUN apt-get update && apt-get install -y \
     libonig-dev \
     libxml2-dev \
     zip \
-    unzip
+    unzip \
+    libpq-dev \
+    libjpeg62-turbo-dev \
+    libfreetype6-dev \
+    locales \
+    libmagickwand-dev \
+    libpng-dev \
+    librabbitmq-dev \
+    libzip-dev \
+    pkg-config \
+    ssh-client \
+    vim
 #cache clear
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 #php extension
-RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
+RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd sockets opcache intl
+RUN pecl install -o -f redis amqp  && rm -rf /tmp/pear && docker-php-ext-enable amqp redis
 #install composer
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 #new user

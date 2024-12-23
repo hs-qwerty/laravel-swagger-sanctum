@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Service;
+namespace App\Services;
 
 use App\Actions\Auth\LoginCheckAction;
 use App\Actions\Auth\RegisterStoreAction;
+use App\Events\LoginEvent;
 
 class UserService
 {
@@ -17,6 +18,12 @@ class UserService
 
     public function check(array $data)
     {
-        return (new LoginCheckAction())->handle($data);
+        $check = (new LoginCheckAction())->handle($data);
+
+        if ($check){
+            LoginEvent::dispatch($data['email']);
+            return $check;
+        }
+        return false;
     }
 }
